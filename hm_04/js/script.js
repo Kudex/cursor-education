@@ -52,7 +52,7 @@ const getRandomMark = (pairsAndThemesArr) => {
 };
 const random_marks = getRandomMark(pairs_and_themes);
 
-const result = `1. Розділ студентів на парам:</br>
+const result = `1. Розділ студентів на пари:</br>
 &nbsp - ${pairs[0]}</br>
 &nbsp - ${pairs[1]}</br>
 &nbsp - ${pairs[2]}</br></br></br>
