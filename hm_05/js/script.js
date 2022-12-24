@@ -113,7 +113,6 @@ const divideByThree = (word) => {
   let arr = [];
   let str = word.replaceAll(" ", "").toLowerCase();
   for (let i = 0; i < str.length; i = i + 3) {
-    console.log("str.substring(i,i+3): ", str.substring(i, i + 3));
     arr.push(str.substring(i, i + 3));
   }
   return arr;
@@ -129,7 +128,6 @@ const generateCombinations = (word) => {
   let result = [];
   let arr = [...word];
   arr.forEach((el, i) => {
-    console.log("el: ", el);
     for (let options of generateCombinations(
       word.slice(0, i) + word.slice(i + 1, word.length)
     )) {
