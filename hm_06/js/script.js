@@ -17,17 +17,6 @@ const students = [
       geometry: [5, 5, 2, 3, 5],
     },
   },
-
-  {
-    name: "Jeka",
-    course: 2,
-    subjects: {
-      statistics: [4, 5, 5, 5, 5, 5, 4, 5, 4, 5],
-      english: [5, 5],
-      cosmology: [5, 5, 5, 5],
-    },
-  },
-
   {
     name: "Anton",
     course: 2,
@@ -49,23 +38,20 @@ const getSubjects = (student) => {
 
   return subjectsArr;
 };
-console.log("Предмети студента: " + getSubjects(students[0]));
+console.log("Предмети студента: ", getSubjects(students[0]));
 
 // 2 //
 
 const getAverageMark = (student) => {
   let arr = [];
-
   for (let i in student.subjects) {
     arr = [...arr, ...student.subjects[i]];
   }
   const resultMark = (
     arr.reduce((acc, el) => acc + el, 0) / arr.length
   ).toFixed(2);
-
   return resultMark;
 };
-
 console.log("Середня оцінка: " + getAverageMark(students[0]));
 
 // 3 //
@@ -76,7 +62,6 @@ const getStudentInfo = (student) => {
   info.averageMark = getAverageMark(student);
   return info;
 };
-
 console.log("Інформація про студента: ", getStudentInfo(students[0]));
 
 // 4 //
@@ -88,9 +73,10 @@ const getStudentsNames = (students) => {
   }
   return arrOfNames;
 };
-console.log("Імена студентів: " + getStudentsNames(students));
+console.log("Імена студентів: ", getStudentsNames(students));
 
 // 5 //
+
 const getBestStudent = (students) => {
   let bestStudent = "";
   let bestMark = 0;
@@ -111,7 +97,6 @@ const calculateWordLetters = (test) => {
   const countOfLetters = {};
   test.split("").forEach((el) => {
     countOfLetters[el] ? countOfLetters[el]++ : (countOfLetters[el] = 1);
-    console.log("countOfLetters[el]", countOfLetters[el]);
   });
   return countOfLetters;
 };
