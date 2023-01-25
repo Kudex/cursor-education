@@ -24,7 +24,9 @@ function renderSingleUser(user) {
   userWrapper.classList.add("user");
   const dataWrapper = document.createElement("div");
   dataWrapper.classList.add("dataWrapper");
-  userWrapper.style.backgroundImage = `url(../src/heroes/${user.name}.jpg)`;
+  userWrapper.style.backgroundImage = `url(../src/heroes/${user.name
+    .split(" ")
+    .join("")}.jpg)`;
   const name = document.createElement("h2");
   name.classList.add("user__name");
   name.textContent = user.name;
