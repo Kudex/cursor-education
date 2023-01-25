@@ -3,15 +3,15 @@ const input = document.querySelector(".inputFilm");
 
 let arr2 = [];
 let arrOfPlanets = [];
-let eventData = input.value;
+let filmPath = input.value;
 input.addEventListener("input", (event) => {
-  eventData = event.data;
+  filmPath = event.data;
 });
 
 const container = document.querySelector(".container");
 const btnStart = document.querySelector(".getInfo");
 btnStart.addEventListener("click", () => {
-  getUsers(`/films/${eventData}/`);
+  getUsers(`/films/${filmPath}/`);
 });
 
 const btnNext = document.querySelector(".next");
@@ -24,7 +24,7 @@ function renderSingleUser(user) {
   userWrapper.classList.add("user");
   const dataWrapper = document.createElement("div");
   dataWrapper.classList.add("dataWrapper");
-  userWrapper.style.backgroundImage = `url(src/${user.name
+  userWrapper.style.backgroundImage = `url(../src/${user.name
     .split(" ")
     .join("")}.jpg)`;
   const name = document.createElement("h2");
