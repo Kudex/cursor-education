@@ -99,12 +99,13 @@ button {
 }
 
 button {
-  border: none;
 
+  border: none;
+  
   background-color: rgb(206, 202, 202);
   color: black;
 
-  padding: 1px 2px;
+  padding: 1px 10px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
