@@ -90,6 +90,7 @@ function renderSingleUser(user) {
 }
 
 async function getUsers(STAR_WARS_URL, url) {
+  console.log("IS LOADING...");
   container.innerHTML = "";
   arr2 = [];
   arrOfPlanets = [];
@@ -107,6 +108,6 @@ async function getUsers(STAR_WARS_URL, url) {
     const planetURL = await request_planets.json();
     arrOfPlanets.push(planetURL);
   }
-  
+
   arr2.forEach(renderSingleUser);
 }
