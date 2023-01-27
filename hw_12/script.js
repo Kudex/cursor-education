@@ -1,3 +1,11 @@
+let mask = document.querySelector(".mask");
+window.addEventListener("load", () => {
+  mask.classList.add("hide");
+  setTimeout(() => {
+    mask.remove();
+  }, 600);
+});
+
 const STAR_WARS_URL = "https://swapi.dev/api/";
 const input = document.querySelector(".inputFilm");
 let getPlanet = document.querySelector(".mainwrapper");
@@ -7,6 +15,18 @@ let arr2 = [];
 let arrOfPlanets = [];
 let filmPath = input.value;
 let url = `/films/${filmPath}/`;
+
+btnStart.addEventListener("click", () => {
+  url = `/films/${filmPath}/`;
+  getUsers(STAR_WARS_URL, url);
+  let mask = document.querySelector(".mask");
+  window.addEventListener("load", () => {
+    mask.classList.add("hide");
+    setTimeout(() => {
+      mask.remove();
+    }, 600);
+  });
+});
 
 input.addEventListener("input", (event) => {
   filmPath = event.data;
@@ -22,12 +42,10 @@ getPlanet = addEventListener("click", function (el) {
 });
 
 function renderSinglePlanet(planet) {
-  console.log("renderSinglePlanet(planet): ", planet);
   const userWrapper = document.createElement("div");
   userWrapper.classList.add("user");
   const dataWrapper = document.createElement("div");
   dataWrapper.classList.add("dataWrapper");
-  console.log("Planets user.name : ", planet.name);
   userWrapper.style.backgroundImage = `url(src/${planet.name
     .split(" ")
     .join("")}.jpg)`;
@@ -46,16 +64,6 @@ function renderSinglePlanet(planet) {
   dataWrapper.append(rotation_period);
   container.append(userWrapper);
 }
-
-btnStart.addEventListener("click", () => {
-  url = `/films/${filmPath}/`;
-  getUsers(STAR_WARS_URL, url);
-});
-
-const btnNext = document.querySelector(".next");
-btnNext.addEventListener("click", () => {
-  console.log("Planets in this part of film are : ", arrOfPlanets);
-});
 
 function renderSingleUser(user) {
   const userWrapper = document.createElement("div");
@@ -99,5 +107,12 @@ async function getUsers(STAR_WARS_URL, url) {
     const planetURL = await request_planets.json();
     arrOfPlanets.push(planetURL);
   }
+  let mask = document.querySelector(".mask");
+  window.addEventListener("load", () => {
+    mask.classList.add("hide");
+    setTimeout(() => {
+      mask.remove();
+    }, 600);
+  });
   arr2.forEach(renderSingleUser);
 }
