@@ -1,0 +1,35 @@
+body {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  min-height: 100vh;
+  width: 100%;
+  /* background-image: url(src/bg.jpeg);
+  background-size: cover; */
+  display: flex;
+  justify-content: center;
+  background-color: rgb(226, 229, 229);
+  align-items:center;
+}
+.wrapper {  
+  height: 100vh;
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  background-color: rgb(141, 166, 202);
+}
+.buttons {
+  height: 30%;
+}
+
+.fontSizeArea {
+  height: 60%;
+  margin: 50px 0 0 0 ;
+}
+
+.text {
+  height: 100px;
+
+}
