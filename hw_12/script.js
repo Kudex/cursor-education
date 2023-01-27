@@ -107,12 +107,6 @@ async function getUsers(STAR_WARS_URL, url) {
     const planetURL = await request_planets.json();
     arrOfPlanets.push(planetURL);
   }
-  let mask = document.querySelector(".mask");
-  window.addEventListener("load", () => {
-    mask.classList.add("hide");
-    setTimeout(() => {
-      mask.remove();
-    }, 600);
-  });
+  
   arr2.forEach(renderSingleUser);
 }
