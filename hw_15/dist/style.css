@@ -1,0 +1,21 @@
+.wrapper {
+  margin: 200px auto;
+  display: flex;
+  flex-wrap: wrap;
+  width: 250px;
+  height: 250px;
+}
+
+.btn_wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.style {
+  color: blue;
+}
+.image {
+  width: 50px;
+  height: 50px;
+}
